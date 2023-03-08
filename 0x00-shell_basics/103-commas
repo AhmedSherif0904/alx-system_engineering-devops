@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1v --group-directories-first | while read -r file; do if [ -d "$file" ]; then printf "%s/\n" "$file"; else echo "$file"; fi; done | tr '\n' ', ' | sed 's/,$/\n/'
+ls -1v --group-directories-first | sed 's/$/\//' | tr '\n' ', ' | sed 's/,$/\n/'
